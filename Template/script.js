@@ -1,5 +1,10 @@
 // Sample data for categories and trending products
-const categoriesData = ['Fruits', 'Vegetables', 'Dairy', 'Meat', 'Beverages'];
+const categoriesData = [
+  'Fruits', 'Vegetables', 'Dairy', 'Meat', 'Beverages',
+  'Snacks', 'Bakery', 'Canned Goods', 'Frozen Foods', 'Personal Care',
+  'Household', 'Pet Supplies', 'Health & Wellness', 'Cleaning Supplies',
+  'Baby & Kids', 'Alcohol'
+];
 const trendingProductsData = ['Product A', 'Product B', 'Product C', 'Product D', 'Product E'];
 
 // Function to generate category buttons dynamically
@@ -18,27 +23,14 @@ function generateCategoryButtons() {
   });
 }
 
-// Function to generate trending product list dynamically
-function generateTrendingProducts() {
-  const trendsSection = document.querySelector('.trends');
-
-  trendingProductsData.forEach(product => {
-    const listItem = document.createElement('div');
-    listItem.textContent = product;
-    trendsSection.appendChild(listItem);
-  });
+// Function to toggle the drawer open/close
+function toggleDrawer() {
+  const drawer = document.querySelector('.drawer');
+  drawer.classList.toggle('open');
 }
 
-// Event listener for product search input
-document.getElementById('product-search').addEventListener('input', function () {
-  // Here, you can implement product search functionality and update the #product-info section accordingly
-  const searchTerm = this.value;
-  const productInfoSection = document.getElementById('product-info');
-
-  // For now, we'll just display the search term entered
-  productInfoSection.textContent = `Searching for: ${searchTerm}`;
-});
-
-// Call the functions to generate category buttons and trending product list
+// Call the function to generate category buttons
 generateCategoryButtons();
-generateTrendingProducts();
+
+// Add event listener to the header to toggle the drawer
+document.querySelector('header').addEventListener('click', toggleDrawer);

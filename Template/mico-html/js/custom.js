@@ -44,3 +44,27 @@ $('.team_carousel').owlCarousel({
         }
     }
 })
+const groceryData = [
+    { item: 'Apples', price: '$1.29 per lb' },
+    { item: 'Bananas', price: '$0.39 per lb' },
+    { item: 'Carrots', price: '$0.99 per lb' },
+    { item: 'Spinach', price: '$2.49 per bunch' },
+    { item: 'Milk', price: '$2.99 per gallon' }
+];
+
+const tableBody = document.getElementById('tableBody');
+
+function populateTable() {
+    groceryData.forEach(item => {
+        const row = document.createElement('tr');
+        const itemName = document.createElement('td');
+        const itemPrice = document.createElement('td');
+        itemName.textContent = item.item;
+        itemPrice.textContent = item.price;
+        row.appendChild(itemName);
+        row.appendChild(itemPrice);
+        tableBody.appendChild(row);
+    });
+}
+
+populateTable();

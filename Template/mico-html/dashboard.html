@@ -94,36 +94,186 @@
   </div>
 
 
-    <!-- Dashboard section -->
+<!-- Dashboard section -->
+<section class="treatment_section layout_padding">
 
-    <section class="treatment_section layout_padding">
- 
-      <div class="container">
-        <div class="heading_container heading_center">
-            <h2>
-            Groceries Price Dashboard
-          </h2>
-        </div>
-        <section id="dashboard">
-            <table id="groceryTable">
-                <thead>
-                    <tr>
-                        <th>Item</th>
-                        <th>Price</th>
-                    </tr>
-                </thead>
-                <tbody id="tableBody">
-             
-                </tbody>
-            </table>
-        </section>
+  <div class="container">
+    <div class="heading_container heading_center">
+      <h2>
+        Groceries Price Based on States
+      </h2>
+    </div>
+    
+    <div class="largest-chart-container">
+      <div id="regions_div"></div>
+    </div>
+    <div class="check-box-group">
+      <label class="custom-checkbox" tabindex="0" aria-label="Poultry">
+        <input type="checkbox">
+        <span class="checkmark"></span>
+        <span class="label">Poultry</span>
+      </label>
+    
+      <label class="custom-checkbox" tabindex="0" aria-label="Beef & veal">
+        <input type="checkbox">
+        <span class="checkmark"></span>
+        <span class="label">Beef & veal</span>
+      </label>
 
-    </section>
-  
-    <!-- end dashboard section -->
+      <label class="custom-checkbox" tabindex="0" aria-label="Lamb">
+        <input type="checkbox">
+        <span class="checkmark"></span>
+        <span class="label">Lamb</span>
+      </label>
+
+      <label class="custom-checkbox" tabindex="0" aria-label="Pork">
+        <input type="checkbox">
+        <span class="checkmark"></span>
+        <span class="label">Pork</span>
+      </label>
+
+      <label class="custom-checkbox" tabindex="0" aria-label="Mince">
+        <input type="checkbox">
+        <span class="checkmark"></span>
+        <span class="label">Mince</span>
+      </label>
+
+      <label class="custom-checkbox" tabindex="0" aria-label="Seafood">
+        <input type="checkbox">
+        <span class="checkmark"></span>
+        <span class="label">Seafood</span>
+      </label>
+
+      <label class="custom-checkbox" tabindex="0" aria-label="Sauces">
+        <input type="checkbox">
+        <span class="checkmark"></span>
+        <span class="label">Sauces</span>
+      </label>
+
+      <label class="custom-checkbox" tabindex="0" aria-label="Oils & vinegars">
+        <input type="checkbox">
+        <span class="checkmark"></span>
+        <span class="label">Oils & vinegars</span>
+      </label>
+      <label class="custom-checkbox" tabindex="0" aria-label="Coffee">
+        <input type="checkbox">
+        <span class="checkmark"></span>
+        <span class="label">Coffee</span>
+      </label>
+    
+    </div>
+    <div class="check-box-group">
+    
+      <label class="custom-checkbox" tabindex="0" aria-label="Fruit">
+        <input type="checkbox">
+        <span class="checkmark"></span>
+        <span class="label">Fruit</span>
+      </label>
+
+      <label class="custom-checkbox" tabindex="0" aria-label="Vegetables">
+        <input type="checkbox">
+        <span class="checkmark"></span>
+        <span class="label">Vegetables</span>
+      </label>
+    
+      <label class="custom-checkbox" tabindex="0" aria-label="Milk">
+        <input type="checkbox">
+        <span class="checkmark"></span>
+        <span class="label">Milk</span>
+      </label>
+
+      <label class="custom-checkbox" tabindex="0" aria-label="Eggs">
+        <input type="checkbox">
+        <span class="checkmark"></span>
+        <span class="label">Eggs</span>
+      </label>
+      <label class="custom-checkbox" tabindex="0" aria-label="Cheese">
+        <input type="checkbox">
+        <span class="checkmark"></span>
+        <span class="label">Cheese</span>
+      </label>
+      <label class="custom-checkbox" tabindex="0" aria-label="Dairy">
+        <input type="checkbox">
+        <span class="checkmark"></span>
+        <span class="label">Dairy</span>
+      </label>
+      <label class="custom-checkbox" tabindex="0" aria-label="Tea">
+        <input type="checkbox">
+        <span class="checkmark"></span>
+        <span class="label">Tea</span>
+      </label>
+
+      <label class="custom-checkbox" tabindex="0" aria-label="Soft drinks">
+        <input type="checkbox">
+        <span class="checkmark"></span>
+        <span class="label">Soft drinks</span>
+      </label>
+    
+      <label class="custom-checkbox" tabindex="0" aria-label="Energy drinks">
+        <input type="checkbox">
+        <span class="checkmark"></span>
+        <span class="label">Energy drinks</span>
+      </label>
+    </div>
+    <div class="check-box-group">
+    
+      <label class="custom-checkbox" tabindex="0" aria-label="Packaged Breads">
+        <input type="checkbox">
+        <span class="checkmark"></span>
+        <span class="label">Packaged Breads</span>
+      </label>
+    
+      <label class="custom-checkbox" tabindex="0" aria-label="Packaged Cakes & Sweet Treats">
+        <input type="checkbox">
+        <span class="checkmark"></span>
+        <span class="label">Packaged Cakes & Sweet Treats</span>
+      </label>
+
+      <label class="custom-checkbox" tabindex="0" aria-label="Breakfast">
+        <input type="checkbox">
+        <span class="checkmark"></span>
+        <span class="label">Breakfast</span>
+      </label>
+      <label class="custom-checkbox" tabindex="0" aria-label="Jams, honey & spreads">
+        <input type="checkbox">
+        <span class="checkmark"></span>
+        <span class="label">Jams, honey & spreads</span>
+      </label>
+    
+      <label class="custom-checkbox" tabindex="0" aria-label="Chips, crackers & snacks">
+        <input type="checkbox">
+        <span class="checkmark"></span>
+        <span class="label">Chips, crackers & snacks</span>
+      </label>
+
+      <label class="custom-checkbox" tabindex="0" aria-label="Confectionery">
+        <input type="checkbox">
+        <span class="checkmark"></span>
+        <span class="label">Confectionery</span>
+      </label>
+      <label class="custom-checkbox" tabindex="0" aria-label="Sports drinks">
+        <input type="checkbox">
+        <span class="checkmark"></span>
+        <span class="label">Sports drinks</span>
+      </label>
+      <label class="custom-checkbox" tabindex="0" aria-label="Tea Drinks">
+        <input type="checkbox">
+        <span class="checkmark"></span>
+        <span class="label">Tea Drinks</span>
+      </label>
+    
+      <label class="custom-checkbox" tabindex="0" aria-label="Coffee Drinks">
+        <input type="checkbox">
+        <span class="checkmark"></span>
+        <span class="label">Coffee Drinks</span>
+      </label>
+  </div>
+
+</section>
+<!-- End dashboard section -->
 
   <!-- info section -->
-  <section class="info_section ", style="margin-top: 300px;">
+  <section class="info_section ", style="margin-top: 500px;">
     <div class="container">
       <div class="info_bottom layout_padding2">
         <div class="row info_main_row">
@@ -224,6 +374,67 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
   <!-- custom js -->
   <script src="js/custom.js"></script>
+
+
+<!-- Google Charts API script -->
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+  google.charts.load('current', {
+    'packages': ['geochart'],
+  });
+  google.charts.setOnLoadCallback(drawRegionsMap);
+
+  function drawRegionsMap() {
+    var data = google.visualization.arrayToDataTable([
+      ['State', 'Display', 'Average Price $'],
+      ['New South Wales', 'New South Wales', 200],
+      ['Victoria', 'Victoria', 300],
+      ['Northern Territory', 'Northern Territory', 300],
+      ['Queensland', 'Queensland', 400],
+      ['Western Australia', 'Western Australia', 400],
+      ['South Australia', 'South Australia', 400],
+      ['AU-TAS', 'Tasmania', 500],
+    ]);
+
+    var options = {
+      region: 'AU',
+      displayMode: 'regions',
+      colorAxis: {colors: ['#ffff00', '#ff0000']},
+      resolution: 'provinces', 
+      keepAspectRatio: true,
+      tooltip: {
+        textStyle: {
+          color: '#444',
+          fontSize: 32 // Adjust the font size for the tooltip here
+        },
+        trigger: 'hover',
+        isHtml: true,
+      },
+    };
+
+    var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+
+    chart.draw(data, options);
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const checkboxes = document.querySelectorAll('.check-box-group input[type="checkbox"]');
+  
+    checkboxes.forEach(function (checkbox) {
+      checkbox.addEventListener('change', function () {
+        if (this.checked) {
+          checkboxes.forEach(function (otherCheckbox) {
+            if (otherCheckbox !== checkbox) {
+              otherCheckbox.checked = false;
+            }
+          });
+        }
+      });
+    });
+  });
+</script>
+
+
 
 
 

@@ -12,7 +12,7 @@
   <meta name="description" content="" />
   <meta name="author" content="" />
 
-  <title>Dashboard</title>
+  <title>Trends</title>
 
 
   <!-- bootstrap core css -->
@@ -93,98 +93,53 @@
     <!-- end header section -->
   </div>
 
+<!-- trends section -->
+  <h2 style="margin-left: 37%;margin-bottom: 0px">
+    Groceries Price Trends
+  </h2>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
 
-    <!-- treatment section -->
+      google.charts.setOnLoadCallback(drawChart);
+      
+      const datasetExample = [['Year', 'Chicken', 'Steak','Wheat','Bread'],
+                          ['2004',  21,12,25,7],
+                          ['2005',  11,5,20,16],
+                          ['2006',  17, 2,11,12],
+                          ['2007',  15,4,15,21]];
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable(removeEl(datasetExample,2));
 
-    <section class="treatment_section layout_padding">
+        var options = {
+          curveType: 'function',
+          legend: { position: 'bottom' },
+          hAxis: {title: 'Year'},
+          vAxis: {title: 'Price in AUD'}
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+        chart.draw(data, options);
+        
+      }
+      function removeEl(array, remIdx) {
+    //https://stackoverflow.com/questions/24812371/deleting-a-column-from-a-multidimensional-array-in-javascript
+          return array.map(function(arr) {
+      return arr.filter(function(el,idx){return idx !== remIdx});  
+    });
+      };	
+    </script>
+  </head>
+  <body>
+    <div id="curve_chart" style="width: 900px; height: 500px; margin-left: 200px;margin-top: 0px"></div>
+  </body>
+
  
-      <div class="container">
-        <div class="heading_container heading_center">
-          <h2>
-            Trends
-          </h2>
-        </div>
-        <div class="row">
-          <div class="col-md-6 col-lg-3">
-            <div class="box ">
-              <div class="img-box">
-                <img src="images/t1.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h4>
-                  Service 1
-                </h4>
-                <p>
-                  Write here = description for service 1
-                </p>
-                <a href="">
-                  Read More
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="box ">
-              <div class="img-box">
-                <img src="images/t2.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h4>
-                  Service 2
-                </h4>
-                <p>
-                  Write here = description for service 2
-                </p>
-                <a href="">
-                  Read More
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="box ">
-              <div class="img-box">
-                <img src="images/t3.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h4>
-                  Service 3
-                </h4>
-                <p>
-                  Write here = description for service 3
-                </p>
-                <a href="">
-                  Read More
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="box ">
-              <div class="img-box">
-                <img src="images/t4.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h4>
-                  Service 4
-                </h4>
-                <p>
-                  Write here = description for service 4
-                </p>
-                <a href="">
-                  Read More
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  
-    <!-- end treatment section -->
+  <!-- end trends section -->
 
   <!-- info section -->
-  <section class="info_section ", style="margin-top: 300px;">
+  <section class="info_section ", style="margin-top: 65px;">
     <div class="container">
       <div class="info_bottom layout_padding2">
         <div class="row info_main_row">
@@ -224,19 +179,21 @@
                 <a href="index.html">
                   Home
                 </a>
-                <a href="dashboard.html" >
-                  Dashboard
+                <a href="about.html">
+                  About
                 </a>
-                <a href="product.html">
-                  Products
+                <a href="treatment.html">
+                  Services
                 </a>
-                <a href="trends.html" class ="active">
-                   Trends
+                <a href="doctor.html">
+                  Developers
+                </a>
+                <a class="active" href="contact.html">
+                  Contact us
                 </a>
               </div>
             </div>
           </div>
-
           <div class="col-md-6 col-lg-3">
             <div class="info_post">
               <h5>
@@ -248,7 +205,6 @@
                 </p>
               </div>
               <div class="post_box">
-
                 <p>
                   Update 2
                 </p>

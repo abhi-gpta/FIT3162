@@ -1,16 +1,26 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8">
+  
+  
+    <meta name="description" content="">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
 
+  <style>
+    select.form-control{
+      display: inline;
+      width: 200px;
+      margin-left: 10px;
+    }
+
+  </style>
+  </head>
 <head>
-  <!-- Basic -->
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <!-- Mobile Metas -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <!-- Site Metas -->
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
+
+
+
 
   <title>Dashboard</title>
 
@@ -21,22 +31,12 @@
   <!-- fonts style -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 
-  <!--owl slider stylesheet -->
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-
-  <!-- font awesome style -->
-  <link href="css/font-awesome.min.css" rel="stylesheet" />
-  <!-- nice select -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha256-mLBIhmBvigTFWPSCtvdu6a76T+3Xyt+K571hupeFLg4=" crossorigin="anonymous" />
-  <!-- datepicker -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css">
   <!-- Custom styles for this template -->
   <link href="css/style.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
 
 </head>
-
 <body class="sub_page">
 
   <div class="hero_area">
@@ -45,10 +45,7 @@
       <div class="header_bottom">
         <div class="container-fluid">
           <nav class="navbar navbar-expand-lg custom_nav-container ">
-            <a class="navbar-brand" href="index.html">
-              <img src="images/logo.png" alt="">
-            </a>
-            </a>
+
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class=""> </span>
@@ -57,9 +54,6 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <div class="d-flex mr-auto flex-column flex-lg-row align-items-center">
                 <ul class="navbar-nav  ">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                      </li>
                       <li class="nav-item">
                         <a class="nav-link" href="dashboard.html">Dashboard</a>
                       </li>
@@ -71,20 +65,6 @@
                       </li>
                 </ul>
               </div>
-              <div class="quote_btn-container">
-                <a href="login.html">
-                  <i class="fa fa-user" aria-hidden="true"></i>
-                  <span>
-                    Login
-                  </span>
-                </a>
-                <a href="signup.html">
-                  <i class="fa fa-user" aria-hidden="true"></i>
-                  <span>
-                    Sign Up
-                  </span>
-                </a>
-              </div>
             </div>
           </nav>
         </div>
@@ -94,260 +74,244 @@
   </div>
 
 
-    <!-- treatment section -->
+    <!-- Table section -->
 
     <section class="treatment_section layout_padding">
  
       <div class="container">
         <div class="heading_container heading_center">
           <h2>
-            Products-category
+            Products
           </h2>
         </div>
-
-        <div class="input-group input-group-lg">
-        <input type="text" id="" name="" class="form-control" placeholder="Search Products" />
         
       </div>
-      </div>
-      <div class="row justify-content-center">
-      <div class="col-md-5">
-        <div class="card">
+    
+      <div class="container mt-4">
+        <!-- Create the drop down filter -->
+        <div class="state-filter">
+      
+          <select id="statesFilter" class="form-control">
+            <option value="">Show All</option>
+            <option value="VIC">Victoria</option>
+            <option value="NSW">New South Wales</option>
+            <option value="SA">South Australia</option>
+            <option value="TAS">Tasmania</option>
+            <option value="WA">Western Australia	</option>
+            <option value="QLD">Queensland</option>
+            <option value="NT">Northern Territory</option>
+            <option value="ACT">Australian Capital Territory</option>
+          </select>
+        </div>
 
-          <div class="card-body">
-    <div class="row">
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <img class="card-img-top" src="https://via.placeholder.com/200x200" alt="" />
-          <div class="card-body">
-            <p class="h6">Poultry</p>
-          </div>
+        <div class="category-filter">
+
+          <select id="categoryFilter" class="form-control">
+            <option value="">Show All</option>
+
+            <option value="Poultry">Poultry</option>
+            <option value="Beef & veal">Beef & veal</option>
+            <option value="Lamb">Lamb</option>
+            <option value="Pork">Pork</option>
+            <option value="Mince">Mince</option>
+            <option value="Seafood">Seafood</option>
+            <option value="Sauces">Sauces</option>
+            <option value="Oil & vingears">Oil & vingears</option>
+            <option value="Coffee">Coffee</option>
+            
+            <option value="Fruit">Fruit</option>
+            <option value="Vegetables">Vegetables</option>
+            <option value="Milk">Milk</option>
+            <option value="Eggs">Eggs</option>
+            <option value="Cheese">Cheese</option>
+            <option value="Dairy">Dairy</option>
+            <option value="Tea">Tea</option>
+            <option value="Soft drinks">Soft drinks</option>
+            <option value="Energy drinks">Energy drinks</option>
+
+            <option value="Packaged Breads">Packaged Breads</option>
+            <option value="Packaged Cakes & Sweet Treats">Packaged Cakes & Sweet Treats</option>
+            <option value="Breakfast">Breakfast</option>
+            <option value="Jams,honey & spreads">Jams,honey & spreads</option>
+            <option value="Chips,crackers & snacks">Chips,crackers & snacks</option>
+            <option value="Confectionery">Confectionery</option>
+            <option value="Sport drinks">Sport drinks</option>
+            <option value="Tea drinks">Tea drinks</option>
+            <option value="Coffee drinks">Coffee drinks</option>
+
+
+          </select>
         </div>
-      </div>
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <img class="card-img-top" src="https://via.placeholder.com/200x200" alt="" />
-          <div class="card-body">
-            <p class="h6">Beef & veal</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <img class="card-img-top" src="https://via.placeholder.com/200x200" alt="" />
-          <div class="card-body">
-            <p class="h6">Lamb</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <img class="card-img-top" src="https://via.placeholder.com/200x200" alt="" />
-          <div class="card-body">
-            <p class="h6">Pork</p>
-          </div>
-          <div class="card-footer p-0">
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <img class="card-img-top" src="https://via.placeholder.com/200x200" alt="" />
-          <div class="card-body">
-            <p class="h6">Mince</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <img class="card-img-top" src="https://via.placeholder.com/200x200" alt="" />
-          <div class="card-body">
-            <p class="h6">Seafood</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <img class="card-img-top" src="https://via.placeholder.com/200x200" alt="" />
-          <div class="card-body">
-            <p class="h6">Fruit</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <img class="card-img-top" src="https://via.placeholder.com/200x200" alt="" />
-          <div class="card-body">
-            <p class="h6">Vegetables</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <img class="card-img-top" src="https://via.placeholder.com/200x200" alt="" />
-          <div class="card-body">
-            <p class="h6">Milk</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <img class="card-img-top" src="https://via.placeholder.com/200x200" alt="" />
-          <div class="card-body">
-            <p class="h6">Eggs</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <img class="card-img-top" src="https://via.placeholder.com/200x200" alt="" />
-          <div class="card-body">
-            <p class="h6">Cheese</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <img class="card-img-top" src="https://via.placeholder.com/200x200" alt="" />
-          <div class="card-body">
-            <p class="h6">Dairy</p>
-          </div>
-        </div>
-      </div>
-    </div>
-          </div>
-          <div class="card-footer p-3">
-            <div class="row">
-              <div class="col-md-6">
-                <ul class="pagination m-0">
-                  <li class="page-item disabled">
-                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-                  </li>
-                  <li class="page-item"><a class="page-link" href="#">1</a></li>
-                  <li class="page-item"><a class="page-link" href="#">2</a></li>
-                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                  <li class="page-item">
-                    <a class="page-link" href="#">Next</a>
-                  </li>
-                </ul>
-              </div>
-              <div class="col-md-6">
-                <p class="text-right mb-0 mt-1">Showing 1 to 3 of 3 (1 Pages)</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      </div>
+        
+        <!-- Set up the datatable -->
+        <table class="table" id="filterTable">
+          <thead>
+            <tr>
+              <th scope="col">Product Name</th>
+              <th scope="col">Category</th>
+              <th scope="col">State</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td scope="col">Public Enemy</td>
+              <td scope="col">Poultry</td>
+              <td scope="col">VIC</td>
+            </tr>
+            <tr>
+              <td scope="col">Chet Baker</td>
+              <td scope="col">Confectionery</td>
+              <td scope="col">NSW</td>
+            </tr>
+            <tr>
+              <td scope="col">Billie Holiday</td>
+              <td scope="col">Mince</td>
+              <td scope="col">NSW</td>
+            </tr>
+            <tr>
+              <td scope="col">Vivaldi</td>
+              <td scope="col">Vegetables</td>
+              <td scope="col">NSW</td>
+            </tr>
+            <tr>
+              <td scope="col">Jurrasic 5</td>
+              <td scope="col">Poultry</td>
+              <td scope="col">VIC</td>
+            </tr>
+            <tr>
+              <td scope="col">Onyx</td>
+              <td scope="col">Sport drinks</td>
+              <td scope="col">WA</td>
+            </tr>
+            <tr>
+              <td scope="col">Tchaikovsky</td>
+              <td scope="col">Sport drinks</td>
+              <td scope="col">WA</td>
+            </tr>
+            <tr>
+              <td scope="col">Oscar Peterson</td>
+              <td scope="col">Confectionery</td>
+              <td scope="col">NSW</td>
+            </tr>
+            <tr>
+              <td scope="col">Oscar Peterson</td>
+              <td scope="col">Vegetables</td>
+              <td scope="col">NT</td>
+            </tr>
+            <tr>
+              <td scope="col">Oscar Peterson</td>
+              <td scope="col">Mince</td>
+              <td scope="col">NSW</td>
+            </tr>
+            <tr>
+              <td scope="col">Oscar Peterson</td>
+              <td scope="col">Vegetables</td>
+              <td scope="col">SA</td>
+            </tr>
+            <tr>
+              <td scope="col">Oscar Peterson</td>
+              <td scope="col">Packaged Breads</td>
+              <td scope="col">QLD</td>
+            </tr>
+            <tr>
+              <td scope="col">12 Peterson</td>
+              <td scope="col">Packaged Breads</td>
+              <td scope="col">QLD</td>
+            </tr>
+          </tbody>
+        </table>
       
     </section>
   
-    <!-- end treatment section -->
-
-  <!-- info section -->
-  <section class="info_section ", style="margin-top: 300px;">
-    <div class="container">
-      <div class="info_bottom layout_padding2">
-        <div class="row info_main_row">
-          <div class="col-md-6 col-lg-3">
-            <h5>
-              Address
-            </h5>
-            <div class="info_contact">
-              <a href="">
-                <i class="fa fa-envelope"></i>
-                <span>
-                  demo@gmail.com
-                </span>
-              </a>
-            </div>
-            <div class="social_box">
-              <a href="">
-                <i class="fa fa-facebook" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-twitter" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-linkedin" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-instagram" aria-hidden="true"></i>
-              </a>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="info_links">
-              <h5>
-                Useful link
-              </h5>
-              <div class="info_links_menu">
-                <a href="index.html">
-                  Home
-                </a>
-                <a href="dashboard.html">
-                  Services
-                </a>
-                <a href="product.html" class = "active">
-                  Doctors
-                </a>
-                <a href="trends.html">
-                  Contact us
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3">
-            <div class="info_post">
-              <h5>
-                Latest Update
-              </h5>
-              <div class="post_box">
-                <p>
-                  Update 1
-                </p>
-              </div>
-              <div class="post_box">
-
-                <p>
-                  Update 2
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- end info_section -->
+    <!-- end Table section -->
 
 
-  <!-- footer section -->
-  <footer class="footer_section">
-    <div class="container">
-      <p>
-        &copy; <span id="displayYear"></span> All Rights Reserved By
-        <a href="https://html.design/">Free Html Templates</a>
-      </p>
-    </div>
-  </footer>
-  <!-- footer section -->
 
-  <!-- jQery -->
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <!-- bootstrap js -->
-  <script src="js/bootstrap.js"></script>
-  <!-- nice select -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js" integrity="sha256-Zr3vByTlMGQhvMfgkQ5BtWRSKBGa2QlspKYJnkjZTmo=" crossorigin="anonymous"></script>
-  <!-- owl slider -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-  <!-- datepicker -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
+
   <!-- custom js -->
   <script src="js/custom.js"></script>
 
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 
+<script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+
+<script>
+  $("document").ready(function () {
+
+    $("#filterTable").dataTable({
+      "searching": true
+    });
+
+    //Get a reference to the new datatable
+    var table = $('#filterTable').DataTable();
+
+    //Take the category filter drop down and append it to the datatables_filter div. 
+    //You can use this same idea to move the filter anywhere withing the datatable that you want.
+
+
+    $("#filterTable_filter.dataTables_filter").append('<label for="categoryFilter" style="margin-right: 0px; margin-left: 10px;">Category:</label>');
+    $("#filterTable_filter.dataTables_filter").append($("#categoryFilter"));
+
+
+    $("#filterTable_filter.dataTables_filter").append('<label for="statesFilter" style="margin-right: 0px; margin-left: 10px;">State:</label>');
+    $("#filterTable_filter.dataTables_filter").append($("#statesFilter"));
+
+
+
+    //Get the column index for the Category column to be used in the method below ($.fn.dataTable.ext.search.push)
+    //This tells datatables what column to filter on when a user selects a value from the dropdown.
+    //It's important that the text used here (Category) is the same for used in the header of the column to filter
+    var categoryIndex = 1;
+    var stateCategoryIndex = 3; 
+
+    $("#filterTable th").each(function (i) {
+      if ($($(this)).html() == "Category") {
+        categoryIndex = i; return false;
+      
+      }
+    });
+    $("#filterTable th").each(function (i) {
+      if ($($(this)).html() == "State") {
+        stateCategoryIndex = i; return false;
+      
+      }
+    });
+
+
+
+
+    //Use the built in datatables API to filter the existing rows by the Category column
+    $.fn.dataTable.ext.search.push(
+      function (settings, data, dataIndex) {
+        var selectedItem = $('#categoryFilter').val()
+        var category = data[categoryIndex];
+        if (selectedItem === "" || category.includes(selectedItem)) {
+          return true;
+        }
+        return false;
+      }
+    );
+    $.fn.dataTable.ext.search.push(
+  function (settings, data, dataIndex) {
+    var selectedState = $('#statesFilter').val();
+    var rowState = data[stateCategoryIndex]; // Use the correct index here
+      
+    if (selectedState === "" || rowState === selectedState) {
+      return true;
+    }
+    return false;
+  }
+);
+    //Set the change event for the Category Filter dropdown to redraw the datatable each time
+    //a user selects a new filter.
+    $("#categoryFilter, #statesFilter").change(function (e) {
+      table.draw();
+    });
+
+    table.draw();
+  });
+</script>
 </body>
 
 </html>

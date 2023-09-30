@@ -691,6 +691,7 @@ a:focus {
 
 .team_section .box .img-box img {
   width: 100%;
+  padding-top: 55px;
 }
 
 .team_section .box .detail-box {

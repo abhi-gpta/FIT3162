@@ -1,4 +1,4 @@
-def regress():
+def regress(product):
     import pandas as pd
     import numpy as np
     import matplotlib.pyplot as plt
@@ -11,7 +11,7 @@ def regress():
     plt.style.use('bmh')
     
     df = pd.read_csv('./output.csv')
-    df = df[df['Product'] == 'Fruit']
+    df = df[df['Product'] == product]
     df = df.groupby(['Date'])['Index Value'].mean().reset_index()
     df = df.sort_values(by='Date')
     df = df.set_index('Date')

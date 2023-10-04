@@ -45,7 +45,12 @@ def forecast():
 
 def process():
     from regression import regress
-    regress()
-    data = request.form.get('data')  # Get user input from the form
-    
+
+    data = request.form['operator']
+    regress(data)
+    print(data)
+
     return render_template('forecast.html', plot_url = "static/plot.png")
+
+if __name__ == "__main__":
+    app.run(debug=True)

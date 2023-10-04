@@ -1210,3 +1210,24 @@ th {
 .custom-checkbox input {
   display: none;
 }
+.star-rating {
+  display: inline-block;
+  font-size: 24px;
+  cursor: pointer;
+  user-select: none; /* Prevent text selection when clicking */
+}
+
+/* Star icons */
+.star-rating .fa-star {
+  color: #ffd700; /* Default star color */
+  user-select: none; /* Prevent text selection when clicking */
+
+}
+
+/* Selected star */
+.star-rating .selected {
+  color: #ff9900; /* Selected star color */
+  user-select: none; /* Prevent text selection when clicking */
+
+}
+

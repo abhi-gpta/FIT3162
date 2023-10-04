@@ -77,16 +77,17 @@
       </body>
 
       <section>
-        <h1>Average Price Heatmap</h1>
-        <p>
+        <h1 >Average Price Heatmap</h1>
+        <p style="width: 1850px;padding: 20px;background: papayawhip;">
+
           The heatmap below allows users to visualise the prices of various
           product catetgories in different states across Australia. To use the
           interective map below, select grocery sub-catergory you are interested
           in learning more about and then select the year for which you want to
-          make the comparison. <br> <br> <i>The value shows is of the average price of all products within that sub-category</i> 
+          make the comparison. <br> <br> <i> <strong>*Value shows is of the average price of all products within that sub-category</strong></i> 
         </p>
       </section>
-      <div style="margin: 10px;">
+      <div>
         <div class="tableauPlaceholder" id="viz1696290032661" style="position: relative; padding-top: 0;">
           <noscript>
             <a href="#">
@@ -115,7 +116,7 @@
         var divElement = document.getElementById("viz1696290032661");
         var vizElement = divElement.getElementsByTagName("object")[0];
         vizElement.style.width = "100%";
-        vizElement.style.height = divElement.offsetWidth * 0.75 + "px";
+        vizElement.style.height = "70vh";
         var scriptElement = document.createElement("script");
         scriptElement.src =
           "https://public.tableau.com/javascripts/api/viz_v1.js";

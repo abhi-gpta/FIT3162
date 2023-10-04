@@ -1229,5 +1229,19 @@ th {
   color: #ff9900; /* Selected star color */
   user-select: none; /* Prevent text selection when clicking */
 
+  
 }
+
+.pretext {
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 20px;
+}
+
+.graphbox {
+  padding-left: 40px;
+  padding-right: 40px;
+  height: 500px
+}
+
 

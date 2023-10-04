@@ -66,12 +66,17 @@
 
 
     <!-- Table section -->
-    <div style="margin: 20px;">
+    <div class = "pretext">
       <h1>Average Product Price Trends</h1>
-      <p style="width: 1850px;padding: 20px;background: papayawhip;">
+      <p>
         The graph below allows the visualisation of the relative prices of individual products over time. Use the filters on the right to select which products you want to visualise and 
         adjust the date slider to select the time period for which you want to visualise the trend. Additionally multiple cities can be selected for region based price comparison. <br> <br> <i> <strong>*Value shows is of the average price of all products within that sub-category</strong></i> 
       </p>
+    </div>
+    
+    <section class="graphbox" style="height:50px">
+
+    <div>
       <div class='tableauPlaceholder' id='viz1696046204152' style='position: relative'>
         <noscript>
           <a href='#'>
@@ -100,12 +105,12 @@
       var divElement = document.getElementById('viz1696046204152');
       var vizElement = divElement.getElementsByTagName('object')[0];
       vizElement.style.width='100%';
-      vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
+      vizElement.style.height=(divElement.offsetWidth*0.45)+'px';
       var scriptElement = document.createElement('script');
       scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
       vizElement.parentNode.insertBefore(scriptElement, vizElement);
     </script>
-
+  </section>
 
 </body>
 

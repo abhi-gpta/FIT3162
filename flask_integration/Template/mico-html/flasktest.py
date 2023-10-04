@@ -1,9 +1,12 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, send_file
+import matplotlib
+import matplotlib.pyplot as plt
+matplotlib.use('Agg')
+import io
+import base64
+
 
 app = Flask(__name__)
-
-
-
 
 # @app.route('/images/<filename>')
 # def serve_image(filename):
@@ -37,3 +40,12 @@ def seasonal():
 @app.route('/forecast.html')
 def forecast():
     return render_template('forecast.html')
+
+@app.route('/process', methods=['POST'])
+
+def process():
+    from regression import regress
+    regress()
+    data = request.form.get('data')  # Get user input from the form
+    
+    return render_template('forecast.html', plot_url = "static/plot.png")

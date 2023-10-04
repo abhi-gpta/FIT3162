@@ -8,9 +8,17 @@ def regress(product):
     from sklearn.metrics import mean_squared_error
     from sklearn.linear_model import LinearRegression
     color_pal = sns.color_palette()
+    import os.path
+
     plt.style.use('bmh')
     
-    df = pd.read_csv('./output.csv')
+    if os.path.isfile('output.csv'): 
+        df = pd.read_csv('output.csv')
+    else:
+        from load_data import loaddata
+        loaddata()
+        df = pd.read_csv('output.csv')
+    
     df = df[df['Product'] == product]
     df = df.groupby(['Date'])['Index Value'].mean().reset_index()
     df = df.sort_values(by='Date')

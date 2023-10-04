@@ -12,15 +12,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
 
-    <title>Seasonanal Trends</title>
-    
-    <style>
-      section {
-        padding: 20px;
-      }
-    </style>
-
-
+    <title>Seasonal Trends</title>
     <!-- bootstrap core css -->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
 
@@ -67,8 +59,19 @@
       <!-- end header section -->
     </div>
 
+    <section class = "pretext">
+      <h1>Seasonal Index Trends</h1>
+      <p >
+        Prices of products can also fluctate within a year and this visualisation allows users to see how the prices of different product categories vary throughout the year.
+        Use the filters on the right to select the product category you are interested in and then use the date slider to adjust the period for which you would like to visualise the
+        intra-year trends.
+        <br> <br> <i> <strong>*Value shown is of the index of that sub-category calculated by the ABS</strong></i> 
+      </p>
+    </section>
+
     <!-- Seasonal section -->
-    <div style="margin: 20px;">
+    <section class="graphbox">
+    <div >
       <div class='tableauPlaceholder' id='viz1696291638633' style='position: relative'><noscript><a href='#'><img
               alt='Prices of Products Across Quarters '
               src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bo&#47;Book2_16960461848310&#47;Sheet2&#47;1_rss.png'
@@ -96,12 +99,12 @@
        var divElement = document.getElementById('viz1696291638633'); 
        var vizElement = divElement.getElementsByTagName('object')[0]; 
        vizElement.style.width = '100%'; 
-       vizElement.style.height = '105vh'; 
+       vizElement.style.height = '70vh'; 
        var scriptElement = document.createElement('script'); 
        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; 
        vizElement.parentNode.insertBefore(scriptElement, vizElement);            
     </script>
-
+  </section>
   </body>
 
 </html>

@@ -29,6 +29,12 @@ def regress(product):
     train = df.loc[df.index < '01-01-2014']
     test = df.loc[df.index >= '01-01-2014']
     
+    last_date = test.index[-1]
+    for i in range(10):
+        for j in range(4):
+            last_date += pd.DateOffset(months=3)
+            test.loc[last_date] = np.NaN
+    
     def create_features(df):
         df = df.copy()
         df['quarter'] = df.index.quarter
@@ -53,12 +59,13 @@ def regress(product):
     model = LinearRegression()
     model.fit(X_train, y_train)
     test['prediction'] = model.predict(X_test)
-    df = df.merge(test[['prediction']], how='left', left_index=True, right_index=True)
+    df = df.merge(test[['prediction']], how='outer', left_index=True, right_index=True)
     plt.tight_layout()
 
     ax = df[['Index Value']].plot(figsize=(15, 5))
+    ax.set_ylabel('Index Points')
     df['prediction'].plot(ax=ax, style='-')
     plt.legend(['Truth Data', 'Predictions'])
-    ax.set_title('Raw Data and Prediction')
+    ax.set_title('Forecasted Relative Price for: ' + product)
     plt.savefig('static/plot.png', bbox_inches='tight', format='png')
     plt.close()

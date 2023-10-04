@@ -26,8 +26,8 @@ def regress(product):
     df.index = pd.to_datetime(df.index)
     df = df[df['Index Value'].notna()]
     
-    train = df.loc[df.index < '01-01-2014']
-    test = df.loc[df.index >= '01-01-2014']
+    train = df.loc[df.index < '01-01-2016']
+    test = df.loc[df.index >= '01-01-2016']
     
     last_date = test.index[-1]
     for i in range(10):
@@ -65,7 +65,7 @@ def regress(product):
     ax = df[['Index Value']].plot(figsize=(15, 5))
     ax.set_ylabel('Index Points')
     df['prediction'].plot(ax=ax, style='-')
-    plt.legend(['Truth Data', 'Predictions'])
+    plt.legend(['Real Data', 'Predictions'])
     ax.set_title('Forecasted Relative Price for: ' + product)
     plt.savefig('static/plot.png', bbox_inches='tight', format='png')
     plt.close()

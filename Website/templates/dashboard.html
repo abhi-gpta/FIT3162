@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Dashboard</title>
+    <style>
+      section {
+        padding: 20px;
+      }
+    </style>
+
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+    <!-- fonts style -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet" />
+
+    <!--owl slider stylesheet -->
+    <link rel="stylesheet" type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+    <!-- font awesome style -->
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <!-- nice select -->
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css"
+      integrity="sha256-mLBIhmBvigTFWPSCtvdu6a76T+3Xyt+K571hupeFLg4=" crossorigin="anonymous" />
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="css/responsive.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename= 'css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/responsive.css') }}">
+
+  </head>
+  <html>
+
+    <body>
+
+      <body class="sub_page">
+        <div class="hero_area">
+          <!-- header section strats -->
+          <header class="header_section">
+            <div class="header_bottom">
+              <div class="container-fluid">
+                <!--Navigation bar-->
+                <div id="nav-placeholder">
+
+                </div>
+
+                <script>
+                  $(function () {
+                    $("#nav-placeholder").load("/navi");
+                  });
+                </script>
+                <!--end of Navigation bar-->
+              </div>
+            </div>
+          </header>
+          <!-- end header section -->
+        </div>
+      </body>
+
+      <section class="pretext">
+        <h1>Price Heatmap</h1>
+        <p>
+
+          The heatmap below allows users to visualise the prices of various
+          product catetgories in different states across Australia. To use the
+          interective map below, select grocery sub-catergory you are interested
+          in learning more about and then select the year for which you want to
+          make the comparison. <br> <br> <i> <strong>*Value shows is of the average price of all products within that
+              sub-category</strong></i>
+        </p>
+      </section>
+      <div class = "graphbox">
+        <div class="tableauPlaceholder" id="viz1696290032661" style="position: relative; padding-top: 0;">
+          <noscript>
+            <a href="#">
+              <img alt="Groceries Prices (AVG)"
+                src="https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;A1&#47;A1_16962896793540&#47;GroceriesPricesAVG&#47;1_rss.png"
+                style="border: none" />
+            </a>
+          </noscript>
+          <object class="tableauViz" style="display: none">
+            <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
+            <param name="embed_code_version" value="3" />
+            <param name="site_root" value="" />
+            <param name="name" value="A1_16962896793540&#47;GroceriesPricesAVG" />
+            <param name="tabs" value="no" />
+            <param name="toolbar" value="yes" />
+            <param name="static_image"
+              value="https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;A1&#47;A1_16962896793540&#47;GroceriesPricesAVG&#47;1.png" />
+            <param name="animate_transition" value="yes" />
+            <param name="display_static_image" value="yes" />
+            <param name="display_spinner" value="yes" />
+            <param name="display_overlay" value="yes" />
+            <param name="display_count" value="yes" />
+            <param name="language" value="en-GB" />
+            <param name="filter" value="publish=yes" />
+          </object>
+        </div>
+      </div>
+      <script type="text/javascript">
+        var divElement = document.getElementById("viz1696290032661");
+        var vizElement = divElement.getElementsByTagName("object")[0];
+        vizElement.style.width = "100%";
+        vizElement.style.height = "70vh";
+        var scriptElement = document.createElement("script");
+        scriptElement.src =
+          "https://public.tableau.com/javascripts/api/viz_v1.js";
+        vizElement.parentNode.insertBefore(scriptElement, vizElement);
+      </script>
+    </body>
+  </html>
+</html>

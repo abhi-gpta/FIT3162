@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- Site Metas -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Seasonal Trends</title>
+    <!-- fonts style -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--owl slider stylesheet -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+    <!-- nice select -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css"
+      integrity="sha256-mLBIhmBvigTFWPSCtvdu6a76T+3Xyt+K571hupeFLg4="
+      crossorigin="anonymous"
+    />
+    <!-- datepicker -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css"
+    />
+    <!-- Custom styles for this template -->
+    <!-- responsive style -->
+
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename= 'css/style.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename= 'css/bootstrap.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename= 'css/font-awesome.min.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename= 'css/responsive.css') }}"
+    />
+
+    <script src="{{ url_for('static', filename = 'js/bootstrap.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery-3.4.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+  </head>
+
+  <body class="sub_page">
+    <div class="hero_area">
+      <!-- header section strats -->
+      <header class="header_section">
+        <div class="header_bottom">
+          <div class="container-fluid">
+            <!--Navigation bar-->
+            <div id="nav-placeholder"></div>
+
+            <script>
+              $(function () {
+                $("#nav-placeholder").load("/navi");
+              });
+            </script>
+            <!--end of Navigation bar-->
+          </div>
+        </div>
+      </header>
+      <!-- end header section -->
+    </div>
+
+    <section class="pretext">
+      <h1>Seasonal Index Trends</h1>
+      <p>
+        Prices of products can also fluctate within a year and this
+        visualisation allows users to see how the prices of different product
+        categories vary throughout the year. Use the filters on the right to
+        select the product category you are interested in and then use the date
+        slider to adjust the period for which you would like to visualise the
+        intra-year trends.
+        <br />
+        <br />
+        <i>
+          <strong
+            >*Value shown is of the index of that sub-category calculated by the
+            ABS</strong
+          ></i
+        >
+      </p>
+    </section>
+
+    <!-- Seasonal section -->
+    <section class="graphbox">
+      <div
+        class="tableauPlaceholder"
+        id="viz1696850355669"
+        style="position: relative"
+      >
+        <noscript
+          ><a href="#"
+            ><img
+              alt="Prices of Products Across Quarters "
+              src="https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bo&#47;Book2_16960461848310&#47;Sheet2&#47;1_rss.png"
+              style="border: none" /></a></noscript
+        ><object class="tableauViz" style="display: none">
+          <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
+          <param name="embed_code_version" value="3" />
+          <param name="site_root" value="" />
+          <param name="name" value="Book2_16960461848310&#47;Sheet2" />
+          <param name="tabs" value="no" />
+          <param name="toolbar" value="yes" />
+          <param
+            name="static_image"
+            value="https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bo&#47;Book2_16960461848310&#47;Sheet2&#47;1.png"
+          />
+          <param name="animate_transition" value="yes" />
+          <param name="display_static_image" value="yes" />
+          <param name="display_spinner" value="yes" />
+          <param name="display_overlay" value="yes" />
+          <param name="display_count" value="yes" />
+          <param name="language" value="en-GB" />
+        </object>
+      </div>
+      <script type="text/javascript">
+        var divElement = document.getElementById("viz1696850355669");
+        var vizElement = divElement.getElementsByTagName("object")[0];
+        vizElement.style.width = "100%";
+        vizElement.style.height = divElement.offsetWidth * 0.45 + "px";
+        var scriptElement = document.createElement("script");
+        scriptElement.src =
+          "https://public.tableau.com/javascripts/api/viz_v1.js";
+        vizElement.parentNode.insertBefore(scriptElement, vizElement);
+      </script>
+    </section>
+  </body>
+</html>

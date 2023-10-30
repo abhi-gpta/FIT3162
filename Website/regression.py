@@ -20,6 +20,9 @@ def check_data(file):
     return df
 
 def regress(product):
+    years = 10
+    training_start = '01-01-2000'
+    training_end = '01-01-2016'
     import pandas as pd
     import numpy as np
     import matplotlib.pyplot as plt
@@ -49,12 +52,12 @@ def regress(product):
     df.index = pd.to_datetime(df.index)
     df = df[df['Index Value'].notna()]
     
-    train = df.loc[df.index < '01-01-2016']
-    train = df.loc[df.index > '01-01-2000']
-    test = df.loc[df.index >= '01-01-2016']
+    train = df.loc[df.index < training_end]
+    train = df.loc[df.index > training_start]
+    test = df.loc[df.index >= training_end]
     
     last_date = test.index[-1]
-    for i in range(10):
+    for i in range(years):
         for j in range(4):
             last_date += pd.DateOffset(months=3)
             test.loc[last_date] = np.NaN

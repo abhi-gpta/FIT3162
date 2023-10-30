@@ -1,4 +1,4 @@
-def main(file_path):
+def main(file_path, upload = 1):
    
     categories = ['Lamb and goat',
                 'Wine',
@@ -60,7 +60,15 @@ def main(file_path):
 
     xls = pd.ExcelFile(file_path)
     sheet_names = xls.sheet_names[2:-1]  # skip the first 2 sheets and the last one
-
+    sheet_1 = pd.read_excel(xls, xls.sheet_names[0],header=None)
+    #check that it is the right file
+    cell_value = sheet_1.iat[5, 1]
+    
+    # Specify the expected value
+    expected_value = "TABLE 9. CPI: Group, Sub-group and Expenditure Class, Index Numbers by Capital City"
+    print(cell_value)
+    assert cell_value == expected_value, "Table is not of the accepted format"
+  
     # Add first sheet manually
     combined_df = pd.read_excel(xls, xls.sheet_names[1])
     # Read each sheet and concatenate it horizontally to the combined DataFrame
@@ -110,7 +118,9 @@ def main(file_path):
 
    # df_melted["% Change"] = df_melted['Index Value'].pct_change() * 100
     df_melted.to_csv('output.csv')
-    upload_to_database(df_melted)
+    if upload:
+        upload_to_database(df_melted)
+    return
     
 
 def upload_to_database(df):
@@ -142,8 +152,8 @@ if __name__ == "__main__":
     import sys
     import os
     arguments = sys.argv
-    arg1 = arguments[1]
-    file_path = arg1
+    file_path = arguments[1]
+    upload = int(arguments[2])
     
     if not os.path.exists(file_path):
         raise FileNotFoundError(f"The file or directory '{file_path}' does not exist.")
@@ -154,4 +164,4 @@ if __name__ == "__main__":
         raise ValueError(f"The file '{file_path}' is not an Excel file (supported extensions: {', '.join(excel_extensions)}).")
     
     print(f"File {file_path} was found")
-    main(file_path)
+    main(file_path, upload)
